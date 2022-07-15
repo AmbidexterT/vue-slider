@@ -1,16 +1,20 @@
 <template>
   <div class="container my-5">
     <div class="row">
-      <div class="col-md-7"><img src="../assets/images/lake.jpg" width="600" height="400" alt=""></div>
-      <div class="col-md-5">Text</div>
+      <div class="col">
+        <div class="bg-secondary text-white my-5 py-4 card" >
+          <div class="card-body">
+          This is
+          </div>
+        </div>
       </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  /* eslint-disable */
-  name: 'Jumbotron'
+  name: 'CTA'
 }
 </script>
 
