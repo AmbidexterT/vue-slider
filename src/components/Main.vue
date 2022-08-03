@@ -1,28 +1,35 @@
 <template>
-<div class="main">
-  <div class="wrapper">
-      <div class="images">
-        <div class="img-1"></div>
-        <div class="img-2"></div>
-      </div>
-      <div class="slider">
-        <div class="drag-line">
-          <span></span>
+  <div class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="wrapper">
+            <div class="images">
+              <div class="img-1"></div>
+              <div class="img-2"></div>
+            </div>
+            <div class="slider">
+              <div class="drag-line">
+                <span></span>
+              </div>
+              <input type="range" min="0" max="100" value="50">
+            </div>
+          </div>
+          <component :is="'script'">
+            let slider = document.querySelector(".slider input");
+            const img = document.querySelector(".images .img-2");
+            const dragLine = document.querySelector(".slider .drag-line");
+            slider.oninput = () => {
+            let sliderVal = slider.value;
+            dragLine.style.left = sliderVal + "%";
+            img.style.width = sliderVal + "%";
+            }
+          </component>
         </div>
-        <input type="range" min="0" max="100" value="50">
+        <div class="col-md-8"><span>Hello</span></div>
       </div>
     </div>
-    <component :is="'script'" >
-      const slider = document.querySelector(".slider input");
-      const img = document.querySelector(".images .img-2");
-      const dragLine = document.querySelector(".slider .drag-line");
-      slider.oninput = () => {
-        let sliderVal = slider.value;
-        dragLine.style.left = sliderVal + "%";
-        img.style.width = sliderVal + "%";
-}
-    </component>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -34,84 +41,97 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html,body{
+
+html, body {
   display: grid;
   height: 100%;
   place-items: center;
   background: #f2eee3;
 }
-.wrapper{
+
+.wrapper {
   position: relative;
-  height: 500px;
-  width: 750px;
+  height: 410px;
+  width: 720px;
   overflow: hidden;
   background: #fff;
-  border: 7px solid #fff;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+  border: 0px solid #ffffff;
+  box-shadow: 0px 0px 0px rgba(2, 2, 2, 0.15);
 }
-.wrapper .images{
+
+.wrapper .images {
   height: 100%;
   width: 100%;
   display: flex;
 }
-.wrapper .images .img-1{
+
+.wrapper .images .img-1 {
   height: 100%;
   width: 100%;
   background: url("../assets/images/background-text.jpg") no-repeat;
 
 }
-.wrapper .images .img-2{
+
+.wrapper .images .img-2 {
   position: absolute;
   height: 100%;
   width: 50%;
   background: url("../assets/images/background-modified.jpg") no-repeat;
 }
-.wrapper .slider{
+
+.wrapper .slider {
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 99;
 }
-.wrapper .slider input{
+
+.wrapper .slider input {
   width: 100%;
   outline: none;
   background: none;
   -webkit-appearance: none;
 }
-.slider input::-webkit-slider-thumb{
+
+.slider input::-webkit-slider-thumb {
   height: 486px;
   width: 3px;
   background: none;
   -webkit-appearance: none;
   cursor: col-resize;
 }
-.slider .drag-line{
+
+.slider .drag-line {
   width: 3px;
   height: 486px;
   position: absolute;
   left: 49.85%;
   pointer-events: none;
 }
+
 .slider .drag-line::before,
-.slider .drag-line::after{
+.slider .drag-line::after {
   position: absolute;
   content: "";
   width: 100%;
   height: 222px;
   background: #fff;
 }
-.slider .drag-line::before{
+
+.slider .drag-line::before {
   top: 0;
 }
-.slider .drag-line::after{
+
+.slider .drag-line::after {
   bottom: 0;
 }
-.slider .drag-line span{
+
+.slider .drag-line span {
   height: 42px;
   width: 42px;
   border: 3px solid #fff;
@@ -121,8 +141,9 @@ html,body{
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
+
 .slider .drag-line span::before,
-.slider .drag-line span::after{
+.slider .drag-line span::after {
   position: absolute;
   content: "";
   top: 50%;
@@ -131,11 +152,13 @@ html,body{
   border-right-width: 0px;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-.slider .drag-line span::before{
+
+.slider .drag-line span::before {
   left: 40%;
   border-left-color: #fff;
 }
-.slider .drag-line span::after{
+
+.slider .drag-line span::after {
   left: 60%;
   border-top-color: #fff;
 }
