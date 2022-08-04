@@ -1,0 +1,23 @@
+@import 'theme-colors';
+
+.app-background {
+  background-color: var(--app-background-color);
+  color: var(--app-text-color);
+}
+
+input.theme-switch {
+  display: none;
+}
+
+input.theme-switch + label {
+  cursor: pointer;
+}
+
+input.theme-switch:not(:checked) + label:hover {
+  cursor: pointer;
+}
+
+input.theme-switch + label:active,
+input.theme-switch:checked + label {
+  cursor: pointer;
+}

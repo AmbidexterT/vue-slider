@@ -1,8 +1,8 @@
-<template>
+<template >
   <div class="main">
     <div class="container">
-      <div class="row">
-        <div class="col-md-4">
+      <div class="flex-parent">
+        <div class="flex-child me-2">
           <div class="wrapper">
             <div class="images">
               <div class="img-1"></div>
@@ -15,18 +15,12 @@
               <input type="range" min="0" max="100" value="50">
             </div>
           </div>
-          <component :is="'script'">
-            let slider = document.querySelector(".slider input");
-            const img = document.querySelector(".images .img-2");
-            const dragLine = document.querySelector(".slider .drag-line");
-            slider.oninput = () => {
-            let sliderVal = slider.value;
-            dragLine.style.left = sliderVal + "%";
-            img.style.width = sliderVal + "%";
-            }
-          </component>
         </div>
-        <div class="col-md-8"><span>Hello</span></div>
+          <div class="flex-child ms-2">
+            <h1>Possibility. Availability.</h1>
+            <br/>
+            <h1>To everyone!</h1>
+          </div>
       </div>
     </div>
   </div>
@@ -35,25 +29,36 @@
 <script>
 export default {
   /* eslint-disable */
-  name: "#main"
+  name: "#main",
+  data: () => ({
+    slider: null
+  }),
+  mounted() {
+    let slider = document.querySelector(".slider input");
+    const img = document.querySelector(".images .img-2");
+    const dragLine = document.querySelector(".slider .drag-line");
+    slider.oninput = () => {
+      let sliderVal = slider.value;
+      dragLine.style.left = sliderVal + "%";
+      img.style.width = sliderVal + "%";
+    }
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
+.flex-parent {
+  display: flex;
+}
+.flex-child {
+  text-align: center;
   box-sizing: border-box;
+  width: 50%;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
 }
-
-html, body {
-  display: grid;
-  height: 100%;
-  place-items: center;
-  background: #f2eee3;
-}
-
 .wrapper {
   position: relative;
   height: 410px;
