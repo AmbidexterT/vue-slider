@@ -1,21 +1,11 @@
 <template>
-  <div id="main">
+  <div id="nav">
     <nav v-bind:class="active" v-on:click.prevent>
       <a href="#main" class="home" v-on:click="makeActive('home')">Home</a>
       <a href="#projects" class="projects" v-on:click="makeActive('projects')">Projects</a>
       <a href="#services" class="services" v-on:click="makeActive('services')">Services</a>
       <a href="#contact" class="contact" v-on:click="makeActive('contact')">Contact</a>
     </nav>
-
-    <input type="checkbox" id='theme-switch' class='theme-switch' v-model="darkMode"/>
-    <label for='theme-switch'>
-                        <span v-if="darkMode === true">
-                            <img alt="logo" src="../assets/images/sun.png" width="40">
-                        </span>
-      <span v-else>
-                            <img alt="logo" src="../assets/images/moon.png" width="40">
-                        </span>
-    </label>
 
   </div>
 
@@ -24,41 +14,15 @@
 <script>
 export default {
   name: 'NavBar',
-  el: '#main',
+  el: '#nav',
   data() {
     return {
-      active: 'home',
-      darkMode: false
+      active: 'home'
     }
   },
   methods: {
     makeActive: function (item) {
       this.active = item;
-    }
-  },
-  mounted() {
-    let bodyElement = document.body;
-    bodyElement.classList.add("app-background");
-    let htmlElement = document.documentElement;
-    let theme = localStorage.getItem("theme");
-    if (theme === 'dark') {
-      htmlElement.setAttribute('theme', 'dark')
-      this.darkMode = true
-    } else {
-      htmlElement.setAttribute('theme', 'light');
-      this.darkMode = false
-    }
-  },
-  watch: {
-    darkMode: function () {
-      let htmlElement = document.documentElement;
-      if (this.darkMode) {
-        localStorage.setItem("theme", 'dark');
-        htmlElement.setAttribute('theme', 'dark');
-      } else {
-        localStorage.setItem("theme", 'light');
-        htmlElement.setAttribute('theme', 'light');
-      }
     }
   }
 };
@@ -68,6 +32,7 @@ export default {
 * {
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 body {
@@ -93,8 +58,6 @@ nav {
   display: inline-block;
   margin: 20px auto 15px;
   background-color: #5597b4;
-  box-shadow: 0 1px 1px #ccc;
-  border-radius: 1px;
 }
 
 nav a {

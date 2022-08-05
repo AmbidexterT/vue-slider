@@ -21,9 +21,21 @@
             <br/>
             <h1>To everyone!</h1>
           </div>
+        <input type="checkbox" id='theme-switch' class='theme-switch button' v-model="darkMode"/>
+
+        <label for='theme-switch'>
+                        <span v-if="darkMode === true">
+                            <img alt="logo" src="../assets/images/sun.png" width="40">
+                        </span>
+          <span v-else>
+                            <img alt="logo" src="../assets/images/moon.png" width="40">
+                        </span>
+        </label>
       </div>
     </div>
+
   </div>
+
 </template>
 
 <script>
@@ -31,7 +43,8 @@ export default {
   /* eslint-disable */
   name: "#main",
   data: () => ({
-    slider: null
+    slider: null,
+    darkMode: false
   }),
   mounted() {
     let slider = document.querySelector(".slider input");
@@ -41,6 +54,29 @@ export default {
       let sliderVal = slider.value;
       dragLine.style.left = sliderVal + "%";
       img.style.width = sliderVal + "%";
+    }
+    let bodyElement = document.body;
+    bodyElement.classList.add("app-background");
+    let htmlElement = document.documentElement;
+    let theme = localStorage.getItem("theme");
+    if (theme === 'dark') {
+      htmlElement.setAttribute('theme', 'dark')
+      this.darkMode = true
+    } else {
+      htmlElement.setAttribute('theme', 'light');
+      this.darkMode = false
+    }
+  },
+  watch: {
+    darkMode: function () {
+      let htmlElement = document.documentElement;
+      if (this.darkMode) {
+        localStorage.setItem("theme", 'dark');
+        htmlElement.setAttribute('theme', 'dark');
+      } else {
+        localStorage.setItem("theme", 'light');
+        htmlElement.setAttribute('theme', 'light');
+      }
     }
   }
 };

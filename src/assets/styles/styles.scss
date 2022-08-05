@@ -4,6 +4,12 @@
   background-color: var(--app-background-color);
   color: var(--app-text-color);
 }
+h1 {
+  color: var(--app-text-color);
+}
+span {
+  color: var(--app-text-color);
+}
 
 input.theme-switch {
   display: none;

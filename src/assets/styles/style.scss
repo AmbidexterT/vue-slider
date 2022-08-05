@@ -22,9 +22,6 @@ p {
   line-height: 1.5em;
 }
 
-h1+p, p+p {
-  margin-top: 10px;
-}
 
 .container {
   padding: 40px 80px;
@@ -139,7 +136,7 @@ h1+p, p+p {
   }
 }
 
-.card-info h1 {
+.card-info  {
   font-family: "Playfair Display", serif;
   font-size: 36px;
   font-weight: 700;

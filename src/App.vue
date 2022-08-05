@@ -1,6 +1,7 @@
 <template>
   <NavBar/>
   <Main/>
+  <arrow/>
   <Jumbotron/>
   <CTA/>
   <Footer/>
@@ -12,6 +13,7 @@ import NavBar from './components/NavBar.vue'
 import Jumbotron from './components/Jumbotron.vue'
 import CTA from './components/CTA.vue'
 import Footer from './components/Footer.vue'
+import arrow from './components/Arrow.vue'
 
 export default {
   name: 'App',
@@ -20,7 +22,8 @@ export default {
     NavBar,
     Jumbotron,
     CTA,
-    Footer
+    Footer,
+    arrow
   }
 }
 </script>
@@ -30,7 +33,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #000000;
 }
 </style>
