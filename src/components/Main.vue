@@ -1,6 +1,6 @@
-<template >
-  <div class="main">
-    <div class="container">
+<template>
+  <div class="main mt-4">
+    <div class="container ">
       <div class="flex-parent">
         <div class="flex-child me-2">
           <div class="wrapper">
@@ -16,26 +16,25 @@
             </div>
           </div>
         </div>
-          <div class="flex-child ms-2">
-            <h1>Possibility. Availability.</h1>
-            <br/>
-            <h1>To everyone!</h1>
-          </div>
-        <input type="checkbox" id='theme-switch' class='theme-switch button' v-model="darkMode"/>
+        <div class="flex-child ms-2">
+          <img src="../assets/images/designer.png" alt="" width="400" height="400">
+          <h1 class="gradient-text">Possibility.Availability.To everyone!</h1>
 
-        <label for='theme-switch'>
+          <label for='theme-switch'>
                         <span v-if="darkMode === true">
                             <img alt="logo" src="../assets/images/sun.png" width="40">
                         </span>
-          <span v-else>
+            <span v-else>
                             <img alt="logo" src="../assets/images/moon.png" width="40">
                         </span>
-        </label>
+          </label>
+          <input type="checkbox" id='theme-switch' class='theme-switch button' v-model="darkMode"/>
+        </div>
+
       </div>
     </div>
 
   </div>
-
 </template>
 
 <script>
@@ -84,9 +83,59 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 .flex-parent {
   display: flex;
 }
+
+.gradient-text {
+  color: transparent;
+  background: conic-gradient(
+      #d9d7f1 12%, #baabda 12%,
+      #baabda 33%, #e7fbbe 33%,
+      #e7fbbe 55%, #ffcbcb 55%,
+      #ffcbcb 70%, #b5deff 70%,
+      #b5deff 87%, #f7d1ba 87%);
+  background-size: 50%;
+  background-clip: text;
+  animation: expand-rev 0.5s ease forwards;
+  cursor: pointer;
+}
+
+.gradient-text:hover {
+  animation: expand 0.5s ease forwards;
+}
+
+@keyframes expand {
+  0% {
+    background-size: 50%;
+    background-position: 0 0;
+  }
+  20% {
+    background-size: 55%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 325%;
+    background-position: -10em -4em;
+  }
+}
+
+@keyframes expand-rev {
+  0% {
+    background-size: 325%;
+    background-position: -10em -4em;
+  }
+  20% {
+    background-size: 55%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 50%;
+    background-position: 0 0;
+  }
+}
+
 .flex-child {
   text-align: center;
   box-sizing: border-box;
@@ -95,6 +144,7 @@ export default {
   display: flex;
   flex-wrap: nowrap;
 }
+
 .wrapper {
   position: relative;
   height: 410px;

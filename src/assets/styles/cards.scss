@@ -1,0 +1,112 @@
+HTML{
+  overflow: hidden;
+}
+body{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.page{
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 30px;
+}
+
+.cls-1{fill:#8dcbdc;}
+.cls-2{fill:#fff;}
+.cls-3{fill:#68bad1;}
+.cls-4{fill:#00559c;}
+.cls-5{fill:#3aa5c2;}
+.cls-6{fill:#2a8bbe;}
+svg{
+  display: block;
+  width:500px;
+  height: 500px;
+  fill: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+  &.base{
+    transform: translate(-50%,-50%) perspective(200px) translateZ(-200px);
+  }
+  &.cover{
+    transform: translate(-50%,-50%) perspective(200px) translateZ(75px);
+  }
+  .fish{
+    filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
+    transform-origin: 250px 250px;
+    animation-name: fishAll;
+    animation-duration: 80s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  .fish2{
+    transform-origin: 250px 250px;
+    animation-name: fishAll2;
+    animation-duration: 80s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    .fish-body{
+      animation-direction: alternate-reverse;
+    }
+    .fish-tail{
+      animation-direction: alternate;
+    }
+  }
+  .fish-body{
+    fill: #e74e19;
+    transform-origin: 327.66px 264.13px;
+    animation-name: fishSwim;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+  }
+  .fish-tail{
+    fill: #dc4817;
+    transform-origin: 327.66px 264.13px;
+    animation-name: fishSwim;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+  }
+  @for $i from 1 through 5 {
+    $zPosi : -200 + (40 * $i);
+    &:nth-child(#{$i}){
+      filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
+      transform: translate(-50%,-50%) perspective(200px) translateZ(#{$zPosi}px);
+      transition: transform 0.1s;
+    }
+  }
+}
+@keyframes fishSwim {
+  0%{
+    transform: rotate(-10deg);
+  }
+  100%{
+    transform: rotate(10deg);
+  }
+}
+@keyframes fishAll {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+@keyframes fishAll2 {
+  0%{
+    transform: rotate(115deg);
+  }
+  100%{
+    transform: rotate(-475deg);
+  }
+}

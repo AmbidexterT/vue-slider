@@ -49,7 +49,7 @@ export default {
   top: 0;
   height: 100%;
   width: 50%;
-  background: #2c3e50;
+  background: #971924;
 }
 
 .arrow:before {

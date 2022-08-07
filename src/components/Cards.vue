@@ -1,84 +1,40 @@
 <template>
-
-  <div class="card-wrap"
-       @mousemove="handleMouseMove"
-       @mouseenter="handleMouseEnter"
-       @mouseleave="handleMouseLeave"
-       ref="card">
-    <div class="card"
-         :style="cardStyle">
-      <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>
-      <div class="card-info">
-        <slot name="header"></slot>
-        <slot name="content"></slot>
+  <main class="page-content">
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Mountain View</h2>
+        <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p><button class="btn">View Trips</button>
       </div>
     </div>
-  </div>
-
+    <div class="card">
+      <div class="content">
+        <h2 class="title">To The Beach</h2>
+        <p class="copy">Plan your next beach trip with these fabulous destinations</p><button class="btn">View Trips</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Desert Destinations</h2>
+        <p class="copy">It's the desert you've always dreamed of</p><button class="btn">Book Now</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Explore The Galaxy</h2>
+        <p class="copy">Seriously, straight up, just blast off into outer space today</p><button class="btn">Book Now</button>
+      </div>
+    </div>
+  </main>
 </template>
 
-  <script>
-    export default {
-      // eslint-disable-next-line vue/multi-word-component-names
-      name: "card",
-      mounted() {
-        this.width = this.$refs.card.offsetWidth;
-        this.height = this.$refs.card.offsetHeight;
-      },
-      props: ['dataImage'],
-      data: () => ({
-        width: 0,
-        height: 0,
-        mouseX: 0,
-        mouseY: 0,
-        mouseLeaveDelay: null
-      }),
-      computed: {
-        mousePX() {
-          return this.mouseX / this.width;
-        },
-        mousePY() {
-          return this.mouseY / this.height;
-        },
-        cardStyle() {
-          const rX = this.mousePX * 30;
-          const rY = this.mousePY * -30;
-          return {
-            transform: `rotateY(${rX}deg) rotateX(${rY}deg)`
-          };
-        },
-        cardBgTransform() {
-          const tX = this.mousePX * -40;
-          const tY = this.mousePY * -40;
-          return {
-            transform: `translateX(${tX}px) translateY(${tY}px)`
-          }
-        },
-        cardBgImage() {
-          return {
-            backgroundImage: `url(${this.dataImage})`
-          }
-        }
-      },
-      methods: {
-        handleMouseMove(e) {
-          this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2;
-          this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height / 2;
-        },
-        handleMouseEnter() {
-          clearTimeout(this.mouseLeaveDelay);
-        },
-        handleMouseLeave() {
-          this.mouseLeaveDelay = setTimeout(() => {
-            this.mouseX = 0;
-            this.mouseY = 0;
-          }, 1000);
-        }
-      }
-    };
-  </script>
+<script>
+export default {
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "Cards"
+};
+</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import '../assets/styles/style.scss';
+@import '../assets/styles/cards.scss';
 </style>
