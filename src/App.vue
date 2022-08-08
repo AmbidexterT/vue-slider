@@ -5,7 +5,6 @@
   <CTA/>
   <Footer/>
 </template>
-
 <script>
 import Main from './components/Main.vue'
 import NavBar from './components/NavBar.vue'
