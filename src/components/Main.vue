@@ -1,40 +1,49 @@
 <template>
   <div class="main mt-4">
-    <div class="container ">
-      <div class="flex-parent">
-        <div class="flex-child me-2">
-          <div class="wrapper">
-            <div class="images">
-              <div class="img-1"></div>
-              <div class="img-2"></div>
-            </div>
-            <div class="slider">
-              <div class="drag-line">
-                <span></span>
+    <div class="container">
+      <div class="row">
+        <div class="flex-parent">
+          <div class="flex-child-1">
+            <div class="wrapper">
+              <div class="images">
+                <div class="img-1"></div>
+                <div class="img-2"></div>
               </div>
-              <input type="range" min="0" max="100" value="50">
+              <div class="slider">
+                <div class="drag-line">
+                  <span></span>
+                </div>
+                <input type="range" min="0" max="100" value="50">
+              </div>
             </div>
           </div>
-        </div>
-        <div class="flex-child ms-2">
-          <img src="../assets/images/designer.png" alt="" width="400" height="400">
-          <h1 class="gradient-text">Possibility.Availability.To everyone!</h1>
 
-          <label for='theme-switch'>
+          <div class="flex-child-2 me-5">
+            <div class="container">
+              <br/>
+              <img src="../assets/images/designer.png" alt="" width="200" height="200">
+              <br/>
+              <h1 class="gradient-text">Possibility.Availability.To everyone!</h1>
+              <br/>
+              <div class="row">
+                <label for='theme-switch'>
                         <span v-if="darkMode === true">
                             <img alt="logo" src="../assets/images/sun.png" width="40">
                         </span>
-            <span v-else>
+                  <span v-else>
                             <img alt="logo" src="../assets/images/moon.png" width="40">
                         </span>
-          </label>
-          <input type="checkbox" id='theme-switch' class='theme-switch button' v-model="darkMode"/>
-        </div>
+                </label>
+                <input type="checkbox" id='theme-switch' class='theme-switch button' v-model="darkMode"/>
+              </div>
+            </div>
+          </div>
 
+        </div>
       </div>
     </div>
-
   </div>
+
 </template>
 
 <script>
@@ -90,6 +99,7 @@ export default {
 
 .gradient-text {
   color: transparent;
+  text-align: center;
   background: conic-gradient(
       #d9d7f1 12%, #baabda 12%,
       #baabda 33%, #e7fbbe 33%,
@@ -136,7 +146,7 @@ export default {
   }
 }
 
-.flex-child {
+.flex-child-1 {
   text-align: center;
   box-sizing: border-box;
   width: 50%;
@@ -145,14 +155,23 @@ export default {
   flex-wrap: nowrap;
 }
 
+.flex-child-2 {
+  text-align: center;
+  width: 50%;
+  display: flex;
+}
+
 .wrapper {
   position: relative;
+  left: 10px;
+  right: 90%;
   height: 410px;
   width: 720px;
   overflow: hidden;
   background: #fff;
   border: 0px solid #ffffff;
   box-shadow: 0px 0px 0px rgba(2, 2, 2, 0.15);
+
 }
 
 .wrapper .images {
@@ -162,9 +181,10 @@ export default {
 }
 
 .wrapper .images .img-1 {
+  position: absolute;
   height: 100%;
   width: 100%;
-  background: url("../assets/images/background-text.jpg") no-repeat;
+  background: url("../assets/images/background-modified.jpg") no-repeat;
 
 }
 
@@ -172,7 +192,7 @@ export default {
   position: absolute;
   height: 100%;
   width: 50%;
-  background: url("../assets/images/background-modified.jpg") no-repeat;
+  background: url("../assets/images/background-text.jpg") no-repeat;
 }
 
 .wrapper .slider {

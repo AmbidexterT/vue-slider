@@ -23,6 +23,8 @@ export default {
   methods: {
     makeActive: function (item) {
       this.active = item;
+      const element = document.getElementById(item);
+      element.scrollIntoView({ behavior: "smooth" });
     }
   }
 };
