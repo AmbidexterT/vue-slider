@@ -1,7 +1,6 @@
 <template>
   <NavBar/>
   <Main/>
-  <arrow/>
   <Jumbotron/>
   <CTA/>
   <Footer/>
@@ -13,7 +12,6 @@ import NavBar from './components/NavBar.vue'
 import Jumbotron from './components/Jumbotron.vue'
 import CTA from './components/CTA.vue'
 import Footer from './components/Footer.vue'
-import arrow from './components/Arrow.vue'
 
 export default {
   name: 'App',
@@ -22,8 +20,7 @@ export default {
     NavBar,
     Jumbotron,
     CTA,
-    Footer,
-    arrow
+    Footer
   }
 }
 </script>

@@ -4,6 +4,7 @@
 
       <div class="center-block">
         <Logo/>
+        <arrow/>
         <img src="../assets/images/main.png"  width="600" height="600" alt=""></div>
       </div>
   </div>
@@ -41,13 +42,15 @@
 
 <script>
 
+import arrow from './Arrow.vue'
 import Logo from './Logo.vue'
 export default {
 
   /* eslint-disable */
   name: 'Jumbotron',
   components: {
-    Logo
+    Logo,
+    arrow
   },
   data: () => ({
     darkMode: false
