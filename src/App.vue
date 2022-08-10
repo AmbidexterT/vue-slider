@@ -1,9 +1,14 @@
 <template>
-  <NavBar/>
-  <Main/>
-  <Jumbotron/>
-  <CTA/>
-  <Footer/>
+  <div class="container">
+    <Stars/>
+  </div>
+  <div id="app">
+    <NavBar/>
+    <Main/>
+    <Jumbotron/>
+    <CTA/>
+    <Footer/>
+  </div>
 </template>
 <script>
 import Main from './components/Main.vue'
@@ -11,6 +16,7 @@ import NavBar from './components/NavBar.vue'
 import Jumbotron from './components/Jumbotron.vue'
 import CTA from './components/CTA.vue'
 import Footer from './components/Footer.vue'
+import Stars from './components/Stars.vue'
 
 export default {
   name: 'App',
@@ -19,7 +25,8 @@ export default {
     NavBar,
     Jumbotron,
     CTA,
-    Footer
+    Footer,
+    Stars
   }
 }
 </script>
