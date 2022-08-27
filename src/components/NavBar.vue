@@ -31,6 +31,7 @@ export default {
 </script>
 
 <style scoped>
+@import '../assets/styles/theme-colors.scss';
 * {
   margin: 0;
   padding: 0;
@@ -45,11 +46,13 @@ body {
 
 a, a:visited {
   outline: none;
-  color: #389dc1;
+  color: black;
+  background-color: var(--nav-back);
 }
 
 a:hover {
   text-decoration: none;
+  color: var(--nav-back);
 }
 
 section, footer, header, aside, nav {
@@ -59,13 +62,12 @@ section, footer, header, aside, nav {
 nav {
   display: inline-block;
   margin: 20px auto 15px;
-  background-color: #5597b4;
 }
 
 nav a {
   display: inline-block;
   padding: 18px 30px;
-  color: #fff !important;
+  color: var(--nav-text);
   font-weight: bold;
   font-size: 16px;
   text-decoration: none !important;
@@ -90,7 +92,7 @@ nav.home .home,
 nav.projects .projects,
 nav.services .services,
 nav.contact .contact {
-  background-color: #e35885;
+  background-color: #ffda1e;
 }
 
 

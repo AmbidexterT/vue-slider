@@ -1,7 +1,5 @@
 <template>
-  <div class="container">
     <Stars/>
-  </div>
   <div id="app">
     <NavBar/>
     <Main/>

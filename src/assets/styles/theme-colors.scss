@@ -1,9 +1,15 @@
 :root {
     --app-background-color: #FFFFFF;
     --app-text-color: #272d38;
+    --logo-back: blue;
+    --nav-back: blue;
+    --nav-text: #3a3e4f;
 }
 
 [theme="dark"] {
     --app-background-color: #383c4e;
     --app-text-color: #FFFFFF;
+    --logo-back: #FFFFFF;
+    --nav-back: #FFFFFF;
+    --nav-text: #FFFFFF;
 }

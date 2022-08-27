@@ -9,62 +9,46 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-5">
         <div class="left-block">
           <img src="../assets/images/mooner.png" width="500" height="500" alt="">
         </div>
-      </div>
-      <div class="col-md-5">
-        <h1>
-          Hello
-        </h1>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5">
-        <div class="row">
+        <div class="right-block">
           <h1>
             Hello
           </h1>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <div class="row">
-          <div class="right-block"><img src="../assets/images/pc-lover.png" width="500" height="500" alt=""></div>
-        </div>
       </div>
     </div>
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-5">
+          <div class="left-block">
+            <h1>
+              Hello
+            </h1>
+      </div>
+          <div class="right-block"><img src="../assets/images/pc-lover.png" width="500" height="500" alt=""></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
         <div class="left-block">
           <img src="../assets/images/pc-mooner.png" width="500" height="500" alt="">
         </div>
-      </div>
-      <div class="col-md-5">
-        <h1>
-          Hello
-        </h1>
+        <div class="right-block">
+          <h1>
+            Hello
+          </h1>
       </div>
     </div>
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-5">
-        <div class="row">
-          <h1>
-            Hello
-          </h1>
+          <div class="left-block">
+            <h1>
+              Hello
+            </h1>
         </div>
-      </div>
-      <div class="col-md-5">
-        <div class="row">
           <div class="right-block"><img src="../assets/images/pener.png" width="500" height="500" alt=""></div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
