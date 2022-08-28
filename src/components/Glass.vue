@@ -1,24 +1,24 @@
 <template>
-  <div class="blog-posts">
+  <div class="container blog-posts">
     <div class="post">
-      <img src="../assets/images/pc-lover.png" alt="" class="post-img" />
+      <img src="../assets/images/pc-lover-card.png" alt="" class="post-img" />
       <div class="post-content">
-        <h3>Hunter x Hunter</h3>
-        <span class="date">Gon and Killua</span>
+        <h3>Interest</h3>
+        <span class="subtitle">Make your wildest dreams come true</span>
       </div>
     </div>
     <div class="post">
-      <img src="../assets/images/pc-lover.png" alt=" " class="post-img" />
+      <img src="../assets/images/pener.png" alt=" " class="post-img" />
       <div class="post-content">
-        <h3>Demon Slayer</h3>
-        <span class="date">Kyojiro</span>
+        <h3>Creation</h3>
+        <span class="subtitle">Borders are only in the head</span>
       </div>
     </div>
     <div class="post">
-      <img src="../assets/images/pc-lover.png" alt=" " class="post-img" />
+      <img src="../assets/images/pc-mooner.png" alt=" " class="post-img" />
       <div class="post-content">
-        <h3>Attack on Titan</h3>
-        <span class="date">Eran, maybe</span>
+        <h3>Accessibility and mobility</h3>
+        <span class="subtitle">Eran, maybe</span>
       </div>
     </div>
   </div>
@@ -32,6 +32,5 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-@import '../assets/styles/glass.css';
+<style scoped src="../assets/styles/glass.css">
 </style>

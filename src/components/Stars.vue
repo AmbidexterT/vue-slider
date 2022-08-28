@@ -12,6 +12,5 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-@import "../assets/styles/stars.css";
+<style scoped src="../assets/styles/stars.css">
 </style>

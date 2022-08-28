@@ -6,9 +6,9 @@
       <arrow/>
       <div class="box">
           <img src="../assets/images/main.png" width="600" height="600" alt="">
-        <div class="my-5">
-          <Glass/>
-        </div>
+      </div>
+      <div class="box">
+        <Glass/>
       </div>
     </div>
   </div>
@@ -18,16 +18,16 @@
         <img src="../assets/images/mooner.png" width="500" height="500" alt="">
       </div>
       <div class="col-sm-6">
-          <Glass/>
+        <Card/>
     </div>
     </div>
   </div>
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <Card/>
+        <GlassCards/>
       </div>
-      <div class="col-sm-6"><img src="../assets/images/pc-lover.png" width="500" height="500" alt=""></div>
+      <div class="col-sm-6"><img src="../assets/images/pc-lover.png" width="400" height="400" alt=""></div>
     </div>
   </div>
   <div class="container">
@@ -43,7 +43,6 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-        <Expand/>
       </div>
       <div class="col-sm-6"><img src="../assets/images/pener.png" width="500" height="500" alt=""></div>
     </div>
@@ -56,8 +55,8 @@ import arrow from './Arrow.vue'
 import Logo from './Logo.vue'
 import Card from './Card.vue'
 import Hover from './Hover.vue'
-import Expand from "@/components/Expand";
-import Glass from "@/components/Glass";
+import Glass from './Glass.vue'
+import GlassCards from './GlassCards.vue'
 
 export default {
 
@@ -65,7 +64,7 @@ export default {
   name: 'Jumbotron',
   components: {
     Glass,
-    Expand,
+    GlassCards,
     Logo,
     arrow,
     Card,

@@ -1,16 +1,4 @@
-* {
-  box-sizing: border-box;
-}
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  background-color: #0f0f0f;
-  font-family: "Roboto", sans-serif;
-  color: #f0f0f0;
-}
 .layout {
   display: flex;
   justify-content: space-evenly;
@@ -21,7 +9,6 @@ body {
   position: relative;
   max-width: 300px;
   max-height: 500px;
-  margin: 10px;
 }
 
 .card-hover img {
