@@ -1,23 +1,24 @@
 <template>
   <div class="container-expand">
-    <div class="panel active" style="background-image: url('../assets/images/designer.png');">
-      <h3>I dont remember the name</h3>
-    </div>
-    <div
-        class="panel" style="background-image: url('../assets/images/designer.png'); ">
-      <h3>Sword art online</h3>
-    </div>
-    <div
-        class="panel" style="background-image: url('../assets/images/designer.png');">
-      <h3>Forgot the name tbh</h3>
-    </div>
-    <div
-        class="panel" style="background-image: url('../assets/images/designer.png');">
+    <div>
+      <img class="panel active" src="../assets/images/designer.png" />
       <h3>Demon Slayer: Tanjiro</h3>
     </div>
-    <div
-        class="panel" style="background-image: url('../assets/images/designer.png');">
-      <h3>One and Only: Naruto</h3>
+    <div>
+      <img class="panel" src="../assets/images/designer.png" />
+      <h3>Demon Slayer: Tanjiro</h3>
+    </div>
+    <div>
+      <img class="panel" src="../assets/images/designer.png" />
+      <h3>Demon Slayer: Tanjiro</h3>
+    </div>
+    <div>
+      <img class="panel" src="../assets/images/designer.png" />
+      <h3>Demon Slayer: Tanjiro</h3>
+    </div>
+    <div>
+      <img class="panel" src="../assets/images/designer.png" />
+      <h3>Demon Slayer: Tanjiro</h3>
     </div>
   </div>
 
@@ -27,7 +28,7 @@
 <script>
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Expand",
+  name: "ExpandCard",
   mounted() {
     const panels = document.querySelectorAll(".panel");
 

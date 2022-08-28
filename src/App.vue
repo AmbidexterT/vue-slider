@@ -30,8 +30,16 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: 'Avenir Next';
+  src: local('Avenir Next Regular'), local('Avenir-Next-Regular'),
+  url('../src/assets/fonts/AvenirNextCyr-Regular.woff2') format('woff2'),
+  url('../src/assets/fonts/AvenirNextCyr-Regular.woff') format('woff'),
+  url('../src/assets/fonts/AvenirNextCyr-Regular.ttf') format('truetype');
+  font-style: normal;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avenir Next,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #000000;

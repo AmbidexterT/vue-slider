@@ -18,7 +18,7 @@
       <img src="../assets/images/pc-mooner.png" alt=" " class="post-img" />
       <div class="post-content">
         <h3>Accessibility and mobility</h3>
-        <span class="subtitle">Eran, maybe</span>
+        <span class="subtitle">Create everywhere</span>
       </div>
     </div>
   </div>

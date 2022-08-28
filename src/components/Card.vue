@@ -2,10 +2,10 @@
     <div class="content">
       <a>
         <div class="content-overlay"></div>
-        <img class="content-image" src="https://imageio.forbes.com/blogs-images/olliebarder/files/2019/06/evangelion_origins-1200x675.jpg?format=jpg&width=1200" />
+        <img class="content-image" src="../assets/images/be-designer.jpg" />
         <div class="content-details fadeIn-top">
-          <h3>e v a n g e l i o n</h3>
-          <p>god's in his heaven.  all's right with the world.</p>
+          <h3 class="sub"> D E S I G N</h3>
+          <p class="sub">Your route to your dream</p>
         </div>
       </a>
   </div>
@@ -26,6 +26,9 @@ export default {
   box-sizing: border-box;
 }
 
+.sub {
+  color: yellow !important;
+}
 body {
   background: #f9f9f9;
   font-size: 16px;
@@ -36,19 +39,19 @@ body {
   height: 100vh;
 }
 
-.container {
+.content {
   width: 50%;
 }
 
 @media screen and (max-width: 640px) {
-  .container{
+  .content{
     display: block;
     width: 100%;
   }
 }
 
 @media screen and (min-width: 900px) {
-  .container {
+  .content {
     width: 33.33333%
   }
 }

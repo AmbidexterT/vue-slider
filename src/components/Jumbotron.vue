@@ -43,8 +43,9 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
+        <Parallax/>
       </div>
-      <div class="col-sm-6"><img src="../assets/images/pener.png" width="500" height="500" alt=""></div>
+      <div class="col-sm-6"><img src="../assets/images/pener.png" width="500" height="500" alt="" ></div>
     </div>
   </div>
 </template>
@@ -57,6 +58,7 @@ import Card from './Card.vue'
 import Hover from './Hover.vue'
 import Glass from './Glass.vue'
 import GlassCards from './GlassCards.vue'
+import Parallax from './Parallax.vue'
 
 export default {
 
@@ -68,7 +70,8 @@ export default {
     Logo,
     arrow,
     Card,
-    Hover
+    Hover,
+    Parallax
   },
   data: () => ({
     darkMode: false
