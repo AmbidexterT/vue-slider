@@ -2,20 +2,20 @@
   <footer class="footer py-3 bg-dark mt-5">
   <div class="container">
     <ul class="wrapper">
-      <li class="ic instagram">
-        <div class="tooltip-footer">Instagram</div>
-        <div style="color: #3aa5c2" href=""><font-awesome-icon :icon="[ 'fab', 'telegram' ]"  /></div>
+      <li class="ic telegram">
+        <div class="tooltip-footer">Telegram</div>
+        <div v-on:click="clickIcon('https://t.me/PTapani')"><font-awesome-icon :icon="[ 'fab', 'telegram' ]"  /></div>
       </li>
       <li class="ic linkedin">
-        <div class="tooltip-footer">Instagram</div>
-        <div><i class="fab fa-instagram"></i></div>
+        <div class="tooltip-footer">Linkedin</div>
+        <div v-on:click="clickIcon('https://www.linkedin.com/in/stepan-petrov/')"><font-awesome-icon :icon="[ 'fab', 'linkedin' ]"  /></div>
       </li>
-      <li class="ic github">
+      <li class="ic github" >
         <div class="tooltip-footer">Github</div>
-        <div href=""><font-awesome-icon :icon="[ 'fab', 'github' ]"  /></div>
+        <div v-on:click="clickIcon('https://github.com/AmbidexterT')"><font-awesome-icon :icon="[ 'fab', 'github' ]"  /></div>
       </li>
     </ul>
-    <span class="text-white"> {{new Date().getFullYear()}} All Rights Reserved - Stepan Petrov</span>
+    <span class="text-white ms-5"> {{new Date().getFullYear()}} All Rights Reserved - Stepan Petrov</span>
   </div>
 </footer>
 </template>
@@ -23,7 +23,16 @@
 <script>
 export default {
   /* eslint-disable */
-  name: 'Footer'
+  name: 'Footer',
+  methods: {
+    clickIcon: function(link) {
+      window.open(
+          link,
+          '_blank'
+      );
+      window.focus();
+    }
+  }
 }
 </script>
 
@@ -127,36 +136,29 @@ body {
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.wrapper .icon:hover .tooltip-footer {
+.wrapper .font-awesome-icon:hover .tooltip-footer {
   top: -45px;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-.wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip-footer {
+.wrapper .font-awesome-icon:hover span,
+.wrapper .font-awesome-icon:hover .tooltip-footer {
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
-.wrapper .facebook:hover,
-.wrapper .facebook:hover .tooltip-footer,
-.wrapper .facebook:hover .tooltip-footer::before {
-  background: #1877F2 !important;
-  color: #ffffff;
-}
-
-.wrapper .twitter:hover,
-.wrapper .twitter:hover .tooltip-footer,
-.wrapper .twitter:hover .tooltip-footer::before {
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip-footer,
+.wrapper .linkedin:hover .tooltip-footer::before {
   background: #1DA1F2 !important;
   color: #ffffff;
 }
 
-.wrapper .instagram:hover,
-.wrapper .instagram:hover .tooltip-footer,
-.wrapper .instagram:hover .tooltip-footer::before {
-  background: #028dff !important;
+.wrapper .telegram:hover,
+.wrapper .telegram:hover .tooltip-footer,
+.wrapper .telegram:hover .tooltip-footer::before {
+  background: #3ea7c2 !important;
   color: #ffffff;
 }
 
@@ -167,11 +169,5 @@ body {
   color: #ffffff;
 }
 
-.wrapper .youtube:hover,
-.wrapper .youtube:hover .tooltip-footer,
-.wrapper .youtube:hover .tooltip-footer::before {
-  background: #CD201F !important;
-  color: #ffffff;
-}
 
 </style>
